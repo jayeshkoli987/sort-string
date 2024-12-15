@@ -1,0 +1,41 @@
+<html>
+	<head>
+	<title>Sort My Name app by Kamal sir</title>
+	<style>
+	*{font-size:40px;}
+	body{background-color:lightblue;}
+	</style>
+	</head>
+	<body>
+	<center>
+	<h1>Sort My Name</h1>
+	<form onsubmit="smn()">
+		<input type="text" id="string" placeholder="Enter your name"/>
+		<br/><br/>
+		<input type="submit" value="Sort My Name"/>
+	</form>
+	   <h2 id="msg"/>
+	<script>
+	    function smn()
+		{
+			event.preventDefault();
+			let string = document.getElementById("string");
+			let msg = document.getElementById("msg");
+			
+			if(string.value==="")
+			{
+				 alert("String is empty");
+				 msg.innerHTML="";
+				 string.focus();
+				 return;
+			}
+			
+			org_string = string.value;
+			sort_string = org_string.split("").sort().join("");
+			
+			msg.innerHTML = sort_string;
+		}
+	</script>
+	</center>
+	</body>
+</html>
